@@ -4,8 +4,9 @@ as a caching system"""
 
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
-    """Base cache 
+    """Base cache
     module"""
 
     def __init__(self):
