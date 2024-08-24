@@ -19,3 +19,7 @@ class FIFOCache(basic_cache):
         if cache_len > self.MAX_ITEMS:
             print(f"DISCARD: {cache_list[0]}")
             delete = self.cache_data.pop(cache_list[0])
+
+    def get(self, key):
+        """ return value of key"""
+        return self.cache_data.get(key)
