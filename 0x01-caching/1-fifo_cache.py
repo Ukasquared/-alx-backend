@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ first in, first out """
-basic_cache = __import__('0-basic_cache').BasicCache
+basic_cache = __import__('base_caching').BaseCaching
+
 
 class FIFOCache(basic_cache):
     """ first in first out"""
@@ -11,7 +12,7 @@ class FIFOCache(basic_cache):
     def put(self, key, item):
         """ adds to the cache"""
         if key is None or item is None:
-            pass
+            return
         self.cache_data[key] = item
         cache_list = list(self.cache_data.keys())
         cache_len = len(cache_list)
