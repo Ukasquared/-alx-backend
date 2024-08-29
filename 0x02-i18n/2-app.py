@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ simple flask app """
 from flask_babel import Babel
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 class Config():
@@ -13,6 +13,14 @@ class Config():
 app = Flask(__name__)
 app.config.from_object(Config) # add config class attr to the app.config instance
 babel = Babel(app)
+
+@babel.localeselector
+def get_locale():
+    """gets the langueage
+    current user """
+    return request.accept_languages.best_match(
+        app.config['LANGUAGES']
+        )
 
 @app.route('/')
 def hello_word():
