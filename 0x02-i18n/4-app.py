@@ -23,9 +23,9 @@ def get_locale():
     """gets the language
     current user """
     if 'locale' in request.args:
-       locale = request.args.get('locale')
-       if locale in app.config['LANGUAGES']:
-           return locale
+        locale = request.args.get('locale')
+        if locale in app.config['LANGUAGES']:
+            return locale
     return app.config['BABEL_DEFAULT_LOCALE']
 
 
