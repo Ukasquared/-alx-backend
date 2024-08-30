@@ -6,13 +6,16 @@ from flask import Flask, render_template, request
 
 class Config():
     """config class"""
-    LANGUAGES = ["en","fr"]
+    LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
+
 app = Flask(__name__)
-app.config.from_object(Config) # add config class attr to the app.config instance
+# add config class attr to the app config instance
+app.config.from_object(Config)
 babel = Babel(app)
+
 
 @babel.localeselector
 def get_locale():
@@ -22,9 +25,11 @@ def get_locale():
         app.config['LANGUAGES']
         )
 
+
 @app.route('/')
 def hello_word():
     return render_template('1-index.html')
+
 
 if __name__ == "__main__":
     app.run()
