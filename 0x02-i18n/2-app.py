@@ -28,6 +28,7 @@ def get_locale():
 
 @app.route('/')
 def hello_word():
+    """show hello to user"""
     return render_template('1-index.html')
 
 
