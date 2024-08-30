@@ -19,6 +19,7 @@ babel = Babel(app)
 
 @app.route('/')
 def hello_word():
+    """a simple app"""
     return render_template('1-index.html')
 
 
