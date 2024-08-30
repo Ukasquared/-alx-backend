@@ -7,7 +7,7 @@ from flask_babel import gettext as _
 
 class Config():
     """config class"""
-    LANGUAGES = ["en","fr"]
+    LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
